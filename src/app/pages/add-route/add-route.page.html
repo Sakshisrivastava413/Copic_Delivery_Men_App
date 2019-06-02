@@ -1,3 +1,11 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Add Route Stop</ion-title>
+  </ion-toolbar>
+</ion-header>
 <div class="header">
   <ion-item>
     <ion-input autofocus="true" placeholder="Enter location..." [(ngModel)]="inputString" debounce="300"
@@ -11,7 +19,7 @@
     <div class="no-results">
       <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png" alt="No results" />
     </div>
-    <p text-center>Start typing your location above</p>
+    <p text-center>{{this.searchFailed ? "No results found" : "Start typing your location above"}}</p>
   </div>
   <div *ngIf="loading">
     <div class="loading">
@@ -23,8 +31,8 @@
       </div>
     </div>
   </div>
-  <div *ngIf="searchResults.length != 0">
-    <ion-item class="results-container" *ngFor="let item of searchResults">
+  <div *ngIf="searchResults.length != 0 && !loading">
+    <ion-item class="results-container" *ngFor="let item of searchResults" (click)="addRoute(item)">
       <p padding>{{ item.location.address }}</p>
       <ion-icon name="arrow-forward" slot="end"></ion-icon>
     </ion-item>

@@ -1,0 +1,32 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>Delivery Route</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<div class="map-div">
+  <agm-map [latitude]="lat" [longitude]="lng">
+    <agm-marker [latitude]="lat" [longitude]="lng"></agm-marker>
+  </agm-map>
+</div>
+
+<ion-footer>
+  <ion-toolbar>
+    <div class="main-route-div">
+      <ion-card-header>
+        <ion-card-subtitle>Courier package</ion-card-subtitle>
+        <ion-card-title>Next Stop: Preet Vihar Metro Station</ion-card-title>
+      </ion-card-header>
+      <ion-chip class="chip">
+        <ion-avatar>
+          <img src="https://gravatar.com/avatar/dba6bae8c566f9d4041fb9cd9ada7741?d=identicon&f=y">
+        </ion-avatar>
+        <ion-label>Aman Aggarwal</ion-label>
+        <ion-icon name="call"></ion-icon>
+      </ion-chip>
+    </div>
+  </ion-toolbar>
+</ion-footer>

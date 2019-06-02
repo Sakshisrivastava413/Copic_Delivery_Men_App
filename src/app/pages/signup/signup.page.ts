@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { AngularFirestore } from '@angular/fire/firestore';
+import { NavController } from '@ionic/angular';
 
 @Component({
   selector: 'app-signup',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SignupPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    private nav: NavController
+  ) { }
 
   ngOnInit() {
+  }
+
+  signin() {
+    this.nav.navigateRoot('tabs');
   }
 
 }

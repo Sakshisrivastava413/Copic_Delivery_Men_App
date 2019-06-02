@@ -1,16 +1,30 @@
 <ion-header>
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
       Route Info
     </ion-title>
   </ion-toolbar>
 </ion-header>
 
-<ion-content>
-  <ion-card class="card">
-    <!-- <ion-card-header> -->
-      <!-- <ion-card-title>Add route info</ion-card-title> -->
-    <!-- </ion-card-header> -->
-    <ion-button href="add-route" shape="round" size="small">Add route</ion-button>
+<ion-content padding>
+
+  <ion-card *ngFor="let route of routes">
+    <ion-card-header>
+      <ion-card-subtitle>{{ route.location.address }}</ion-card-subtitle>
+      <ion-card-title>
+        23:12:21 13th May, 2019
+      </ion-card-title>
+    </ion-card-header>
+    <ion-button color="danger" expand="block" padding>Delete route</ion-button>
   </ion-card>
+
+  <div text-center>
+    <ion-text color="primary" *ngIf="!routes.length">
+      No Route Stops currently added!
+    </ion-text>
+  </div>
+
+  <div padding></div>
+
+  <ion-button (click)="openAddRoutePage()" shape="round" expand="block">Add route</ion-button>
 </ion-content>

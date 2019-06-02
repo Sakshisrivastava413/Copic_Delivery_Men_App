@@ -1,6 +1,6 @@
 .header{
     background: var(--ion-color-primary);
-    height: 25vh;
+    height: 30vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -9,9 +9,13 @@
         width: 84%;
     }
 
+    position: absolute;
+    width: 100%;
+
 }
 
 .main-container {
+    margin-top: 120px;
     height: 100%;
     .no-results-container {
         .no-results {
@@ -34,15 +38,17 @@
 .loading {
   display: flex;
   justify-content: center;
+  align-content: center;
+  margin-top: 200px;
     div {
         display: flex;
         flex-flow: row nowrap;
         align-items: center;
         justify-content: space-between;
-        width: 2em;
+        width: 3em;
       
       span {
-        width: 0.3em;
+        width: 0.5em;
         height: 1em;
         background-color: #000;
       }
