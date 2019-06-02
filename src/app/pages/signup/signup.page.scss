@@ -1,0 +1,35 @@
+.main-container {
+    background-image: url("https://www.history.com/.image/t_share/MTU3ODc4NjAzNTE1NTA0MzUx/gettyimages-555173607-2.jpg");
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+
+    .layer {
+        background-color: rgba(0, 0, 0, 0.7);
+        position: absolute;
+        top: 0;
+        z-index: 1000000;
+        width: 100%;
+        height: 100%;
+        .title {
+            font-size: 2.5rem;
+            color: white;   
+            margin-top: 100px;
+            font-weight: bold;
+            text-align: center
+        }
+        .inputs {
+            margin-top: 150px;
+            padding-right: 32px;
+            padding-left: 32px;
+            border-radius: 5px;
+            .button {
+                --background: var(--ion-color-light-contrast);
+            }
+        }
+    }
+    
+}
+

@@ -1,0 +1,32 @@
+<div class="header">
+  <ion-item>
+    <ion-input autofocus="true" placeholder="Enter location..." [(ngModel)]="inputString" debounce="300"
+      (ionChange)="searchLocation()">
+    </ion-input>
+  </ion-item>
+</div>
+
+<div class="main-container">
+  <div class="no-results-container" *ngIf="searchResults.length == 0 && !loading">
+    <div class="no-results">
+      <img src="http://icons.iconarchive.com/icons/icons8/ios7/256/Very-Basic-Search-icon.png" alt="No results" />
+    </div>
+    <p text-center>Start typing your location above</p>
+  </div>
+  <div *ngIf="loading">
+    <div class="loading">
+      <div>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="searchResults.length != 0">
+    <ion-item class="results-container" *ngFor="let item of searchResults">
+      <p padding>{{ item.location.address }}</p>
+      <ion-icon name="arrow-forward" slot="end"></ion-icon>
+    </ion-item>
+  </div>
+</div>
